@@ -5,3 +5,7 @@ remote_theme: "pages-themes/cayman@v0.2.0"
 markdown: kramdown
 plugins:
   - jekyll-remote-theme
+kramdown:
+  math_engine: mathjax
+  mathjax:
+    cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

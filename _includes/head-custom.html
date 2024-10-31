@@ -8,8 +8,15 @@
   };
 </script>
 <style>
+    /* ヘッダーの縦幅を半分に調整 */
   .page-header {
     padding-top: 10px; /* 必要に応じて調整 */
     padding-bottom: 10px; /* 必要に応じて調整 */
+  }
+  /* ヘッダー内の<h1>をメインの<h1>と同じサイズにする */
+  .page-header h1 {
+    font-size: inherit; /* メインの<h1>と同じサイズにする */
+    line-height: 1.2;   /* 行の高さも調整する場合 */
+    margin: 0;          /* 余白を調整する場合 */
   }
 </style>

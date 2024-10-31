@@ -31,3 +31,14 @@
   margin-bottom: 1em;  /* 下余白 */
 }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const mathElements = document.querySelectorAll('.MathJax_Display');
+    mathElements.forEach(el => {
+      el.style.display = 'block';
+      el.style.textAlign = 'center';
+      el.style.marginTop = '1em';
+      el.style.marginBottom = '1em';
+    });
+  });
+</script>

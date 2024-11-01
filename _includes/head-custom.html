@@ -17,8 +17,10 @@
 
   /* displayモードの数式に上下の余白を追加し、中央揃え */
   .mjx-display {
-    display: block;
-    text-align: center;
+    text-align: center;   /* 親要素を中央揃え */
+  }
+  .mjx-display > div {
+    display: inline-block; /* 子要素をインラインブロックにして中央揃えに */
     margin-top: 1em;
     margin-bottom: 1em;
   }
@@ -33,6 +35,16 @@
     },
     options: {
       processEscapes: true
+    },
+    startup: {
+      ready: () => {
+        MathJax.startup.defaultReady();
+        // MathJaxのレンダリングが完了した後に中央揃えを適用
+        document.querySelectorAll('.mjx-display').forEach(el => {
+          el.style.textAlign = 'center';
+          el.firstElementChild.style.display = 'inline-block';
+        });
+      }
     }
   };
 </script>

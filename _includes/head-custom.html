@@ -35,19 +35,10 @@
     },
     options: {
       processEscapes: true
-    },
-    startup: {
-      ready: () => {
-        MathJax.startup.defaultReady();
-        // MathJaxのレンダリングが完了した後に中央揃えを適用
-        document.querySelectorAll('.mjx-display').forEach(el => {
-          el.style.textAlign = 'center';
-          el.firstElementChild.style.display = 'inline-block';
-        });
-      }
     }
   };
 </script>
 
 <!-- MathJax CDNスクリプト -->
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+

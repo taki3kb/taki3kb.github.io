@@ -1,5 +1,31 @@
 <!-- _includes/head-custom.html -->
 
+<!-- CSSスタイルを先に記述 -->
+<style>
+  /* ヘッダーの縦幅を半分に調整 */
+  .page-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* ヘッダー内の<h1>をメインの<h1>と同じサイズにする */
+  .page-header h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* displayモードの数式に上下の余白を追加し、中央揃え */
+  .mjx-display {
+    text-align: center;   /* 親要素を中央揃え */
+  }
+  .mjx-display > div {
+    display: inline-block; /* 子要素をインラインブロックにして中央揃えに */
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+</style>
+
 <!-- MathJaxの設定 -->
 <script>
   window.MathJax = {

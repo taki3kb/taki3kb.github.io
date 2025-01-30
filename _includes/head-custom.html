@@ -17,12 +17,16 @@
 
   /* displayモードの数式に上下の余白を追加し、中央揃え */
   .mjx-display {
-    text-align: center;   /* 親要素を中央揃え */
+    text-align: center; /* 親要素を中央揃え */
+    margin-top: 1.5em;  /* 数式の前にスペースを追加 */
+    margin-bottom: 1.5em; /* 数式の後にスペースを追加 */
   }
+
   .mjx-display > div {
     display: inline-block; /* 子要素をインラインブロックにして中央揃えに */
-    margin-top: 1em;
-    margin-bottom: 1em;
+    /* 既存のマージンを調整または削除 */
+    margin-top: 0;
+    margin-bottom: 0;
   }
 </style>
 

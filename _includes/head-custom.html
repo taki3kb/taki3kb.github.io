@@ -1,80 +1,18 @@
-<!-- head-custom.html -->
-
-<!-- CSSスタイルを先に記述 -->
-<style>
-  /* ヘッダーの縦幅を半分に調整 */
-  .page-header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  /* ヘッダー内の<h1>をメインの<h1>と同じサイズにする */
-  .page-header h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-    margin: 0;
-  }
-
-  /* 1. ページ全体のフォントサイズを小さくする */
-  body {
-    font-size: 14px; /* ここを希望のサイズに調整（例: 14px） */
-    line-height: 1.5; /* 読みやすさのために行間も調整 */
-  }
-
-  /* .main-content クラスのフォントサイズを上書き */
-  @media screen and (min-width: 64em) {
-    .main-content {
-      font-size: 1rem; /* 既存の1.1remを上書き */
-    }
-  }
-
-  /* displayモードの数式に上下の余白を追加し、中央揃え */
-  .mjx-display {
-    text-align: center; /* 親要素を中央揃え */
-    margin-top: 1.5em;  /* 数式の前にスペースを追加 */
-    margin-bottom: 1.5em; /* 数式の後にスペースを追加 */
-  }
-
-  .mjx-display > div {
-    display: inline-block; /* 子要素をインラインブロックにして中央揃えに */
-    /* 既存のマージンを調整または削除 */
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  /* 2. 画像の表示サイズを大きくする */
-  
-  /* すべての画像に対して基本的なスタイルを設定 */
-  img {
-    max-width: 100%; /* 画像がコンテナの幅を超えないようにする */
-    height: auto;    /* アスペクト比を維持 */
-  }
-
-  /* 必要に応じて、特定のコンテナ内の画像サイズを調整 */
-  /* 例: .content クラス内の画像を80%幅に設定 */
-  .main-content img {
-    width: 100%;        /* 画像の幅 */
-    max-width: none;  /* 最大幅 */
-    display: block;    /* ブロック要素として表示し、中央揃えにする */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-</style>
+<!-- _includes/head-custom.html -->
 
 <!-- MathJaxの設定 -->
 <script>
-  MathJax = {
+  window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']]
     },
     options: {
-      processEscapes: true
+      processEscapes: true,
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
     }
   };
 </script>
 
 <!-- MathJax CDNスクリプト -->
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>

@@ -1,12 +1,8 @@
 title: "My GitHub Page"
 description: >-
   Welcome to my website! This is built with Jekyll and hosted on GitHub Pages.
-remote_theme: "pages-themes/cayman@v0.2.0"
+theme: minima
 markdown: kramdown
-plugins:
-  - jekyll-remote-theme
 kramdown:
   input: Kramdown
   hard_wrap: true
-mathjax:
-  cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

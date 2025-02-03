@@ -5,6 +5,7 @@ remote_theme: "pages-themes/cayman@v0.2.0"
 markdown: kramdown
 plugins:
   - jekyll-remote-theme
+  - jekyll-last-modified-at
 kramdown:
   input: GFM
   hard_wrap: true

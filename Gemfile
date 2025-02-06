@@ -1,1 +1,3 @@
-gem 'jekyll-last-modified-at'
+group :jekyll_plugins do
+  gem "jekyll-last-modified-at"
+end

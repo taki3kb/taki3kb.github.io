@@ -1,3 +1,4 @@
+timezone: "Asia/Tokyo"
 title: "My GitHub Page"
 description: >-
   Welcome to my website! This is built with Jekyll and hosted on GitHub Pages.

@@ -11,7 +11,7 @@
 
 ### 手順
 1. 以下のリンクから Windows 用インストーラ（Miniforge3）をダウンロード：
-   - https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe
+   - [https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe)
    - 例: Miniforge3-Windows-x86_64.exe  version 24.11.3-2(64bit)
 
 2. インストーラを実行し、ユーザーインストール（管理者権限不要）を選択。

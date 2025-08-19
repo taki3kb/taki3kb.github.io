@@ -28,18 +28,28 @@
     startup: {
       ready: () => {
         try {
+          // CJK(日本語)に密着している $...$ の前後に半角スペースを自動挿入
+          const CJK = '[\\u3040-\\u30FF\\u3400-\\u9FFF\\u3000-\\u303F]'; // ひら/カタ/漢字/全角記号
+          const reLeft  = new RegExp(`(${CJK})\\$(?!\\$)([^$\\n]+?)\\$`, 'gu');
+          const reRight = new RegExp(`\\$(?!\\$)([^$\\n]+?)\\$(${CJK})`, 'gu');
+
           const walk = (node) => {
-            if (node.nodeType === 3) { // Text
-              node.nodeValue = node.nodeValue.replace(
-                /([^\s])\$(?!\$)([^$\n]+?)\$(?!\$)([^\s])/g,
-                '$1 \\($2\\) $3'
-              );
-            } else if (node.nodeType === 1 && !/^(script|style|code|pre)$/i.test(node.tagName)) {
+            if (node.nodeType === 3) {
+              // 既に \( \) / \[ \] を含むテキストは触らない
+              if (node.nodeValue.includes('\\(') || node.nodeValue.includes('\\[')) return;
+
+              let v = node.nodeValue;
+              // 左がCJKに密着 → CJK と $ の間にスペース
+              v = v.replace(reLeft, (_, a, m) => `${a} $${m}$`);
+              // 右がCJKに密着 → $ と CJK の間にスペース
+              v = v.replace(reRight, (_, m, b) => `$${m}$ ${b}`);
+              node.nodeValue = v;
+            } else if (node.nodeType === 1 && !/^(script|style|code|pre|textarea)$/i.test(node.tagName)) {
               for (const c of Array.from(node.childNodes)) walk(c);
             }
           };
           walk(document.body);
-        } catch (e) { console.warn('inline-math prepass skipped:', e); }
+        } catch (e) { console.warn('inline-math spacing prepass skipped:', e); }
         MathJax.startup.defaultReady();
       }
     }

@@ -8,7 +8,7 @@ plugins:
   - jekyll-remote-theme
 kramdown:
   input: GFM
-  hard_wrap: true
+  hard_wrap: false
   math_engine: mathjax
 mathjax:
   cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

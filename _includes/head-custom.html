@@ -1,52 +1,66 @@
 <!-- _includes/head-custom.html -->
 
-<!-- CSSスタイルを先に記述 -->
+<!-- 見た目の微調整 -->
 <style>
-  /* ヘッダーの縦幅を半分に調整 */
-  .page-header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  /* ヘッダー内の<h1>をメインの<h1>と同じサイズにする */
-  .page-header h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-    margin: 0;
-  }
-
-  /* 2. メディアクエリ内での文字サイズ調整 */
+  .page-header { padding-top: 10px; padding-bottom: 10px; }
+  .page-header h1 { font-size: 2rem; line-height: 1.2; margin: 0; }
   @media screen and (min-width: 64em) {
-    .main-content {
-      font-size: 1rem; /* 既存の1.1remから1remに変更（より小さく） */
-      color: #333333;
-    }
+    .main-content { font-size: 1rem; color: #333333; }
   }
-
-  /* displayモードの数式に上下の余白を追加し、中央揃え */
-  .mjx-display {
-    text-align: center;   /* 親要素を中央揃え */
-  }
-  .mjx-display > div {
-    display: inline-block; /* 子要素をインラインブロックにして中央揃えに */
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
+  /* display 数式の中央寄せ＆余白 */
+  .mjx-display { text-align: center; }
+  .mjx-display > div { display: inline-block; margin-top: 1em; margin-bottom: 1em; }
 </style>
 
-<!-- MathJaxの設定 -->
+<!-- MathJax 設定 -->
 <script>
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true   // ← v3 では tex 配下
     },
     options: {
-      processEscapes: true,
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    svg: { fontCache: 'global' },
+    // レンダ前に「前後が空白でない $...$」を \( ... \) に自動補正（改行は跨がない）
+    startup: {
+      ready: () => {
+        try {
+          const walk = (node) => {
+            if (node.nodeType === 3) { // Text
+              node.nodeValue = node.nodeValue.replace(
+                /([^\s])\$(?!\$)([^$\n]+?)\$(?!\$)([^\s])/g,
+                '$1 \\($2\\) $3'
+              );
+            } else if (node.nodeType === 1 && !/^(script|style|code|pre)$/i.test(node.tagName)) {
+              for (const c of Array.from(node.childNodes)) walk(c);
+            }
+          };
+          walk(document.body);
+        } catch (e) { console.warn('inline-math prepass skipped:', e); }
+        MathJax.startup.defaultReady();
+      }
     }
   };
 </script>
 
-<!-- MathJax CDNスクリプト -->
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<!-- MathJax 本体 -->
+<script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+<!-- 画像をクリックで原画像を新規タブで開く -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('main img').forEach(img => {
+      if (!img.closest('a')) {
+        const a = document.createElement('a');
+        a.href = img.src;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        img.replaceWith(a);
+        a.appendChild(img);
+      }
+    });
+  });
+</script>

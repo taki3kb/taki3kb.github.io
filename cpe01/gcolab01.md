@@ -13,7 +13,7 @@ Python 学習の初歩として非常に手軽で敷居が低いシステムで�
 ---
 
 ### 始めてみる
-[始めてみる動画](http://www.sp.u-tokai.ac.jp/taki/cpe01/2020-10-30_start_gc.mp4)
+[始めてみる動画](../media/2020-10-30_start_gc.mp4)
 
 Web ブラウザを利用します。FireFox，Edge，Safariでも利用できますが，Chromeをおすすめします。  
 Chrome を起動して下さい。  
@@ -46,7 +46,7 @@ print("Hello World!")
 
 実行結果やエラーメッセージがその下に表示されます。
 
-![exec01](http://www.sp.u-tokai.ac.jp/taki/cpe01/2020-10-30_01.png)
+![exec01](../media/2020-10-30_01.png)
 
 このように Google Colaboratory はセル単位で入力・実行・結果表示を繰り返します。  
 次のセルに以下のプログラムを書き込んでみましょう。これはグラフを表示するプログラム（ソースコード）です。
@@ -61,25 +61,25 @@ plt.plot(x, y)
 plt.show()
 ```
 
-![exec02](http://www.sp.u-tokai.ac.jp/taki/cpe01/2020-10-30_02.png)
+![exec02](../media/2020-10-30_02.png)
 
 ---
 
 ### ファイルを保存して，ipynbファイルを課題提出する
-[保存とダウンロード動画](http://www.sp.u-tokai.ac.jp/taki/cpe01/2020-10-30_file_save_ipynb.mp4)
+[保存とダウンロード動画](../media/2020-10-30_file_save_ipynb.mp4)
 
 ファイル名を変更して Google ドライブに保存しましょう。  
 次に、OpenLMS の課題提出を ipynb 形式のファイルで提出します。  
 そのために自分の PC に ipynb ファイルを保存し、OpenLMS にログインして提出します。
 
-![exec03](http://www.sp.u-tokai.ac.jp/taki/cpe01/2020-10-30_03.png)
+![exec03](../media/2020-10-30_03.png)
 
 ---
 
 ### パソコンにダウンロードした ipynb ファイルを再び開く方法
 Google Colaboratory の左上メニュー「ファイル」＞「ノートブックをアップロード」を押して、開きたいファイルを選択します。
 
-![upload](http://www.sp.u-tokai.ac.jp/taki/cpe01/2020-12-03_01.png)
+![upload](../media/2020-12-03_01.png)
 
 ---
 

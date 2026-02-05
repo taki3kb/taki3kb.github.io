@@ -11,5 +11,4 @@ kramdown:
   input: GFM
   hard_wrap: false
   math_engine: mathjax
-
-google_analytics: G-BSTLWG3456
+  

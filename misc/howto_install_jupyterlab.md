@@ -83,7 +83,7 @@ cv2.destroyAllWindows()
 ---
 
 ## 5. バージョンの選び方（OpenCV + Python）
-- OpenCV は Python 3.8〜3.12 に対応しているらしい。3.10 または 3.11が安定しているのらしい。（ChatGPTが言っている）
+- OpenCV は Python 3.8〜3.12 に対応しているらしい。3.10 または 3.11が安定しているらしい。（ChatGPTが言っている）
 
 ---
 

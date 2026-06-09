@@ -1,8 +1,8 @@
 # taki3kb.github.io
 ## Hello 👍 from GitHub Pages!
 ```
-2025_02
-東海大学理系教育センター
+2026_06
+東海大学理系教育研究センター
 滝内賢一
 ```
 

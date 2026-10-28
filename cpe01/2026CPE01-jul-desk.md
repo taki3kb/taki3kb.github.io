@@ -8,4 +8,4 @@ Windows版
 
 (Windows版)[https://github.com/jupyterlab/jupyterlab-desktop#download]
 
-![](../media/2026-09-02_1.png)
+![](./media/2026-09-02_1.png)

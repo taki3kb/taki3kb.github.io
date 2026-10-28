@@ -38,5 +38,5 @@ Shift キーと Enter キーを同時に押すと入力したコードが実行�
 ![](./media/2026-09-02_9.png)
 
 PDF資料の内容に従って追加の設定を行ってください。
-()[./envssetting.pdf]
+[日本語ユーザ名のときの設定方法](./envssetting.pdf)
 

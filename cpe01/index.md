@@ -14,5 +14,5 @@
 - [第３回](./2024CPE01-03)
 - [第４回](./2024CPE01-04)
 - [第５回](./2024CPE01-05)
-- [JupyterLab-Desktopについて](2026CPE01-jul-desk)
+- [JupyterLab-Desktopについて](./2026CPE01-jul-desk)
 

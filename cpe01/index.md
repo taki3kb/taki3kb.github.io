@@ -15,4 +15,5 @@
 - [第４回](./2024CPE01-04)
 - [第５回](./2024CPE01-05)
 - [JupyterLab-Desktopについて](./2026CPE01-jul-desk)
+- [第６回０１](./programing_basic_00a.ipynb)
 
